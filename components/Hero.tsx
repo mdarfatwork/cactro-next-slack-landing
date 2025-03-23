@@ -12,7 +12,7 @@ const Hero = () => {
                 <span>
                     Slack is your digital HQ. Meet the new features keeping teams connected in the work-from-anywhere world.{" "}
                     <Link className="underline inline-flex items-center" href="/login">
-                        Let's go <ArrowRight size={20} />
+                        Let&apos;s go <ArrowRight size={20} />
                     </Link>
                 </span>
                 <button onClick={() => setIsVisible(false)}>
@@ -34,8 +34,8 @@ const Hero = () => {
                         <button className='bg-[#642067] text-white px-6 py-2 font-semibold border-2 border-[#642067] rounded-md hover:bg-transparent hover:text-[#642067] cursor-pointer'>
                             TRY FOR FREE
                         </button>
-                        <button className='flex items-center gap-1 bg-sky-500 px-0.5 py-[1px] font-semibold text-white border-2 border-sky-500 rounded-md hover:bg-sky-600'>
-                            <span className='bg-white p-1 h-full flex items-center justify-center'>
+                        <button className='flex items-center justify-center gap-1 bg-sky-500 px-0.5 py-[1px] font-semibold text-white border-2 border-sky-500 rounded-md hover:bg-sky-600'>
+                            <span className='md:bg-white p-1 h-full flex items-center justify-center'>
                                 <Image src="/google-icon.webp" alt="Google" width={20} height={20} />
                             </span>
                             <span>START WITH GOOGLE</span>
