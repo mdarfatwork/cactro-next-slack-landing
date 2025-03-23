@@ -1,15 +1,23 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, X } from 'lucide-react'
 import Image from 'next/image'
 
 const Hero = () => {
+    const [isVisible, setIsVisible] = useState(true);
     return (
         <section className='my-3'>
-            <p className='bg-[#0064A0] text-white w-full rounded-full p-5 text-lg flex justify-between'>
-                <span className='flex gap-1'>Slack is your digital HQ. meet the new features keepking teams connected in work-from-anywhere world.<Link className='underline flex items-center' href="/login">Let's go<ArrowRight size={20} /></Link></span>
-                <X />
+            <p className={`${isVisible ? 'bg-[#0064A0] text-white w-full rounded-full p-5 lg:text-lg hidden md:flex justify-between items-center' : 'hidden'}`}>
+                <span>
+                    Slack is your digital HQ. Meet the new features keeping teams connected in the work-from-anywhere world.{" "}
+                    <Link className="underline inline-flex items-center" href="/login">
+                        Let's go <ArrowRight size={20} />
+                    </Link>
+                </span>
+                <button onClick={() => setIsVisible(false)}>
+        <X size={30} className="cursor-pointer" />
+      </button>
             </p>
             <div className='flex flex-col lg:flex-row items-center gap-8 mt-10'>
                 {/* Left: Content */}
@@ -28,7 +36,7 @@ const Hero = () => {
                         </button>
                         <button className='flex items-center gap-1 bg-sky-500 px-0.5 py-[1px] font-semibold text-white border-2 border-sky-500 rounded-md hover:bg-sky-600'>
                             <span className='bg-white p-1 h-full flex items-center justify-center'>
-                                <Image src="/google-icon.webp" alt="Google" width={20} height={20}  />
+                                <Image src="/google-icon.webp" alt="Google" width={20} height={20} />
                             </span>
                             <span>START WITH GOOGLE</span>
                         </button>
@@ -36,7 +44,7 @@ const Hero = () => {
                 </div>
 
                 <div className='flex-1 relative'>
-                    <Image src="/img-project-management-hero.png" alt="Hero Image" width={600} height={400} />
+                    <Image src="/img-project-management-hero.png" alt="Hero Image" width={600} height={400} priority={true} />
 
                     <div className='absolute top-[-20px] left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-full shadow-md text-sm font-semibold flex items-center gap-1'>
                         👍 3
